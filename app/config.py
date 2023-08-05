@@ -5,3 +5,5 @@ class Configuration(object):
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:qwaszx12@localhost/test1?auth_plugin=mysql_native_password'
 
     SQLALCHEMY_TRACK_MODIFICATION = False
+
+    SQLALCHEMY_ECHO = True
