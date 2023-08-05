@@ -5,10 +5,16 @@ Bluprint index page
 {% endblock %}
 
 {% block content_title %}
-    Bluprint index page
+    Posts:
 {% endblock %}
 
 
 {% block content %}
-content
+
+{% for post in posts %}
+    <p>
+        {{post.title}}
+    </p>
+
+{% endfor %}
 {% endblock %}
