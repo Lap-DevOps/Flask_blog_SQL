@@ -1,0 +1,76 @@
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+INSERT INTO tag (name, slug) VALUES (%(name)s, %(slug)s)
+[generated in 0.00108s] {'name': 'Python', 'slug': 'Python'}
+COMMIT
+BEGIN (implicit)
+INSERT INTO tag (name, slug) VALUES (%(name)s, %(slug)s)
+[cached since 696s ago] {'name': 'Example Tag', 'slug': 'Example-Tag'}
+COMMIT
+BEGIN (implicit)
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag 
+ LIMIT %(param_1)s
+[generated in 0.00228s] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[generated in 0.00072s] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[cached since 506.1s ago] {'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag 
+ LIMIT %(param_1)s
+[cached since 567.4s ago] {'param_1': 1}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[generated in 0.00083s] {'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag 
+ LIMIT %(param_1)s
+[generated in 0.00056s] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[cached since 163.2s ago] {'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[generated in 0.00063s] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[cached since 223.6s ago] {'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[cached since 60.46s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+INSERT INTO post_tags (post_id, tag_id) VALUES (%(post_id)s, %(tag_id)s)
+[generated in 0.00069s] {'post_id': 1, 'tag_id': 1}
+COMMIT

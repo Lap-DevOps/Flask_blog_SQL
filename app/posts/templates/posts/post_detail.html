@@ -5,16 +5,27 @@ Post {{post.title}}
 {% endblock %}
 
 {% block content_title %}
-    Posts detail: {{post.title}}
+Posts detail: {{post.title}}
+
+
 {% endblock %}
 
 
 {% block content %}
+<div>
+    {% for tag in tags %}
+    <a href="{{ url_for('posts.tag_detail', slug=tag.slug) }}" >
+        <span class="badge text-bg-info">{{tag.name}}</span>
+    </a>
+    {% endfor %}
+</div>
 
+<p>
+<div class="main-content">
+    {{post.body}}
 
-    <p>
-         {{post.body}}
-    </p>
+</div>
+</p>
 
 
 {% endblock %}
