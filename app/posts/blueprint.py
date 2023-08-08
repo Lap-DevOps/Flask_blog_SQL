@@ -29,11 +29,22 @@ def create_post():
 @posts.route('/')
 def index():
     q = request.args.get("q")
-    if q:
-        posts = Post.query.filter(Post.title.contains(q) | Post.body.contains(q)).all()
+
+    page = request.args.get('page')
+
+    if page and page.isdigit():
+        page = int(page)
     else:
-        posts = Post.query.order_by(Post.created.desc()).all()
-    return render_template('posts/index.html', posts=posts)
+        page = 1
+
+    if q:
+        posts_query = Post.query.filter(Post.title.contains(q) | Post.body.contains(q))  # .all()
+    else:
+        posts_query = Post.query.order_by(Post.created.desc()) #.all()
+
+    pages = posts_query.paginate(page=page, per_page=5)
+
+    return render_template('posts/index.html', posts=posts_query, pages=pages)
 
 
 @posts.route("/<slug>")
