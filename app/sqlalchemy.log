@@ -5230,3 +5230,104 @@ FROM tag
  LIMIT %(param_1)s
 [cached since 7.778s ago] {'param_1': 20}
 ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM post
+[cached since 57.59s ago] {'count_2': '*'}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[cached since 57.5s ago] {'param_1': 20}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00065s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00090s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 3.092s ago] {'param_1': 10, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 2.976s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 4.284s ago] {'param_1': 20, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 4.167s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00087s] {'slug_1': 'Post_title1', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[generated in 0.00069s] {'param_1': 4}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 4.944s ago] {'slug_1': 'Post_title', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[cached since 4.941s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 13.17s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 13.07s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM post
+[generated in 0.00334s] {'count_2': '*'}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[generated in 0.00103s] {'param_1': 20}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.id = %(pk_1)s
+[generated in 0.00077s] {'pk_1': '1'}
+ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM tag
+[generated in 0.00087s] {'count_2': '*'}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag 
+ LIMIT %(param_1)s
+[generated in 0.00121s] {'param_1': 20}
+ROLLBACK

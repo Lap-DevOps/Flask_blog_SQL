@@ -1,13 +1,17 @@
 import logging
 
 from flask import Flask
-from flask.cli import FlaskGroup
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate, MigrateCommand
+from flask_admin import Admin
+
+
+from flask.cli import FlaskGroup
 from flask_sqlalchemy import SQLAlchemy
 
+from flask_admin.contrib.sqla import ModelView
+
 from config import Configuration
+
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
