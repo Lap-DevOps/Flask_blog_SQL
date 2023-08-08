@@ -25,10 +25,16 @@ Posts:
             </a>
         </li>
         {% for page in pages.iter_pages() %}
-            <li class="page-item {% if page == pages.page  %}disabled{% endif %}">
-                <a class="page-link" href="./?page={{page}}">{{page}}</a></li>
+            {% if page %}
+                <li class="page-item {% if page == pages.page  %}disabled{% endif %}">
+                    <a class="page-link" href="./?page={{page}}">{{page}}</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">&hellip;</span>
+                </li>
+            {% endif %}
         {% endfor %}
-
         <li class="page-item {% if not pages.has_next %}disabled{% endif %}">
             <a class="page-link" href="./?page={{pages.next_num}}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
@@ -36,4 +42,6 @@ Posts:
         </li>
     </ul>
 </nav>
+
+
 {% endblock %}

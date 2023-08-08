@@ -42,9 +42,9 @@ def index():
     else:
         posts_query = Post.query.order_by(Post.created.desc()) #.all()
 
-    pages = posts_query.paginate(page=page, per_page=5)
+    pages = posts_query.paginate(page=page, per_page=2)
 
-    return render_template('posts/index.html', posts=posts_query, pages=pages)
+    return render_template('posts/index.html',  pages=pages)
 
 
 @posts.route("/<slug>")
