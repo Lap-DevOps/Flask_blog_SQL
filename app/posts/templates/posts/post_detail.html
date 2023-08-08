@@ -8,6 +8,11 @@ Post {{post.title}}
 Posts detail: {{post.title}}
 
 
+    <a href="{{ url_for('posts.edit_post', slug=post.slug) }}" class="btn btn-outline-info">Edit</a>
+
+
+
+
 {% endblock %}
 
 
