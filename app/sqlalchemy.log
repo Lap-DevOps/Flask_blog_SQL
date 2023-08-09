@@ -5331,3 +5331,248 @@ FROM tag
  LIMIT %(param_1)s
 [generated in 0.00121s] {'param_1': 20}
 ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00075s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00088s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 4.675s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 4.553s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00101s] {'slug_1': 'PY', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[generated in 0.00083s] {'param_1': 31}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 4.829s ago] {'slug_1': 'PY', 'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 6.625s ago] {'slug_1': 'PY', 'param_1': 1}
+COMMIT
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.id = %(pk_1)s
+[generated in 0.00073s] {'pk_1': 31}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 6.802s ago] {'slug_1': 'PY', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[cached since 4.571s ago] {'param_1': 31}
+ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM post
+[generated in 0.00184s] {'count_2': '*'}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[generated in 0.00085s] {'param_1': 20}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.id = %(pk_1)s
+[generated in 0.00099s] {'pk_1': '4'}
+ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM tag
+[generated in 0.00095s] {'count_2': '*'}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag 
+ LIMIT %(param_1)s
+[generated in 0.02433s] {'param_1': 20}
+ROLLBACK
+BEGIN (implicit)
+SELECT count(%(count_2)s) AS count_1 
+FROM post
+[cached since 16.89s ago] {'count_2': '*'}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+ LIMIT %(param_1)s
+[cached since 16.81s ago] {'param_1': 20}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00068s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00084s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00077s] {'slug_1': 'neqq', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[generated in 0.00095s] {'param_1': 30}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 2.844s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 2.832s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 3.27s ago] {'slug_1': 'aaa', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[cached since 3.243s ago] {'param_1': 26}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00063s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00072s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00091s] {'slug_1': 'PY', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[generated in 0.00067s] {'param_1': 31}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00060s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00071s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00076s] {'slug_1': 'login', 'param_1': 1}
+ROLLBACK
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[generated in 0.00058s] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[generated in 0.00073s] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(pk_1)s
+[generated in 0.04158s] {'pk_1': '111'}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE lower(user.email) = lower(%(lower_1)s) 
+ LIMIT %(param_1)s
+[generated in 0.00069s] {'lower_1': '1@user.ru', 'param_1': 1}
+UPDATE user SET password=%(password)s WHERE user.id = %(user_id)s
+[generated in 0.00091s] {'password': '$6$rounds=656000$n2mRvTG1CjO3xjsH$6Ne0Sx.cpUdHV9VNQ58WPUosq2cMbjTRzQ5UkPJigsa8JuHhzjc82vrs4h3ADdSrQ2fZKH/QJl5lMgAkUq5dl1', 'user_id': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[generated in 0.00075s] {'param_1': 1}
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00064s] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 0.04099s ago] {'param_1': 1}
+ROLLBACK

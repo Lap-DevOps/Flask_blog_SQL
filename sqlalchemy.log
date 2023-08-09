@@ -74,3 +74,19 @@ BEGIN (implicit)
 INSERT INTO post_tags (post_id, tag_id) VALUES (%(post_id)s, %(tag_id)s)
 [generated in 0.00069s] {'post_id': 1, 'tag_id': 1}
 COMMIT
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+INSERT INTO user (email, password, active) VALUES (%(email)s, %(password)s, %(active)s)
+[generated in 0.00097s] {'email': '1@user.ru', 'password': 'admin', 'active': 1}
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+ LIMIT %(param_1)s
+[generated in 0.00066s] {'param_1': 1}
+ROLLBACK

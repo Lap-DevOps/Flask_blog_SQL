@@ -7,3 +7,6 @@ class Configuration(object):
     SQLALCHEMY_TRACK_MODIFICATION = False
 
     SQLALCHEMY_ECHO = True
+
+    SECURITY_PASSWORD_SALT = 'kjsdhkjsdkjhkjds'
+    SECURITY_PASSWORD_HASH = 'sha512_crypt'

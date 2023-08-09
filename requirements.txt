@@ -29,3 +29,4 @@ Werkzeug==2.3.6
 wheel==0.40.0
 WTForms==3.0.1
 zipp==3.16.2
+flask-security==3.0.0
