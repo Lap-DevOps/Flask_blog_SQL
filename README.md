@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## Setting Up SQL Database
 
-1. Install and set up a SQL database server (e.g., PostgreSQL, MySQL).
+1. Install and set up a MySQLdatabase server 
 
 2. Update the `config.py` file with your database configuration.
 
@@ -41,59 +41,6 @@ python main.py
 
 Visit `http://localhost:5000` in your web browser to access the app.
 
-## Main Components
-
-### `main.py`
-
-```python
-from app import app, db
-from posts.blueprint import posts
-import view
-
-app.register_blueprint(posts, url_prefix='/blog')
-
-if __name__ == '__main__':
-    app.run()
-```
-
-### `app.py`
-
-```python
-import logging
-from flask import Flask
-from flask.cli import FlaskGroup
-from flask_admin import Admin, AdminIndexView
-from flask_admin.contrib.sqla import ModelView
-from flask_migrate import Migrate, MigrateCommand
-from flask_security import SQLAlchemyUserDatastore, Security, current_user
-from flask_sqlalchemy import SQLAlchemy
-from config import Configuration
-from models import Post, Tag, User, Role
-
-app = Flask(__name__)
-app.config.from_object(Configuration)
-
-db = SQLAlchemy(app)
-
-migrate = Migrate(app, db)
-manager = FlaskGroup(app)
-manager.add_command('db', MigrateCommand)
-
-# ... (Admin views and configurations)
-
-# Setting up logging
-logging.basicConfig(level=logging.DEBUG)
-
-# Creating a logger for SQLAlchemy
-logger = logging.getLogger('sqlalchemy.engine')
-handler = logging.FileHandler('sqlalchemy.log')
-handler.setLevel(logging.DEBUG)
-logger.addHandler(handler)
-
-# Security setup
-user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, user_datastore)
-```
 
 ## Contributions
 
