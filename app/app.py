@@ -20,7 +20,7 @@ migrate = Migrate(app, db)
 manager = FlaskGroup(app)
 manager.add_command('db', MigrateCommand)
 
-from models import Post, Tag
+from models import Post, Tag, User, Role
 
 
 class AdminMixin():
@@ -38,13 +38,25 @@ class AdminView(AdminMixin, ModelView):
 class HomeAdminView(AdminMixin, AdminIndexView):
     pass
 
+
 class BaseModelView(ModelView):
     def on_model_change(self, form, model, is_created):
         model.generate_slug()
+        return super(BaseModelView, self).on_model_change(form, model, is_created)
+
+
+class PostAdminView(AdminView, BaseModelView):
+    form_columns = ['title', 'body', 'tags']
+
+
+class TagAdminView(AdminMixin, BaseModelView):
+    form_columns = ['name', 'posts']
+
 
 admin = Admin(app, 'FlaskApp', url="/", index_view=HomeAdminView('Home'))
-admin.add_view(AdminView(Post, db.session))
-admin.add_view(AdminView(Tag, db.session))
+admin.add_view(PostAdminView(Post, db.session))
+admin.add_view(TagAdminView(Tag, db.session))
+admin.add_view(AdminView(User, db.session))
 
 # Настройка логирования
 logging.basicConfig(level=logging.DEBUG)  # Устанавливаем уровень логирования
@@ -57,7 +69,6 @@ logger.addHandler(handler)
 
 # login
 #
-from models import User, Role
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
