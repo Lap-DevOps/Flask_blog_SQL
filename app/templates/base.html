@@ -10,6 +10,7 @@
 
         {% endblock %} | Flask app
     </title>
+    <link rel="icon" href="{{ url_for('static', filename='images/flask_icon.png') }}" sizes="32x32">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
@@ -28,7 +29,11 @@
                     <a class="nav-link" href="{{ url_for('posts.index')  }}">Blog</a>
                 </li>
                 {% if request.endpoint and request.endpoint.startswith('posts.') %}
-                <li><a class="nav-link" aria-current="page" href="{{ url_for('posts.create_post') }}">+ Add new post</a></li>
+                <li>
+                    {% if current_user.has_role('admin') %}
+                    <a class="nav-link" aria-current="page" href="{{ url_for('posts.create_post') }}">+ Add new post</a>
+                    {%endif%}
+                </li>
                 {% endif %}
 
             </ul>
@@ -39,14 +44,28 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="navbar-nav  mb-2 px-2 mb-lg-0">
+                {% if current_user.has_role('admin') %}
                 <li class="nav-item px-2 ">
-                    <button type="button" class="btn btn-outline-warning">Login</button>
+                    <button type="button" class="btn btn-outline-warning"
+                            onclick="window.location.href='{{ url_for('security.logout') }}'">Logout
+                    </button>
+
+                </li>
+                {% else %}
+                <li class="nav-item px-2 ">
+                    <button type="button" class="btn btn-outline-warning"
+                            onclick="window.location.href='{{ url_for('security.login') }}'">Login
+                    </button>
 
                 </li>
                 <li class="nav-item px-2">
-                    <button type="button" class="btn btn-outline-info">Register</button>
+                    <button type="button" class="btn btn-outline-info"
+                            onclick="window.location.href='{{ url_for('security.login') }}'">Register
+                    </button>
                 </li>
-
+                >Register</button>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

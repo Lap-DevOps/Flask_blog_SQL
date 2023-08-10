@@ -9,3 +9,4 @@ from models import Post
 def index():
 
     return render_template('index.html')
+

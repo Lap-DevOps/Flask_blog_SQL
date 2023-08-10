@@ -1,11 +1,12 @@
 import logging
 
-from flask import Flask
+from flask import Flask, redirect, url_for, request
 from flask.cli import FlaskGroup
-from flask_admin import Admin
+from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate, MigrateCommand
 from flask_security import SQLAlchemyUserDatastore, Security
+from flask_security import current_user
 from flask_sqlalchemy import SQLAlchemy
 
 from config import Configuration
@@ -21,9 +22,29 @@ manager.add_command('db', MigrateCommand)
 
 from models import Post, Tag
 
-admin = Admin(app)
-admin.add_view(ModelView(Post, db.session))
-admin.add_view(ModelView(Tag, db.session))
+
+class AdminMixin():
+    def is_accessible(self):
+        return current_user.has_role('admin')
+
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('security.login', next=request.url))
+
+
+class AdminView(AdminMixin, ModelView):
+    pass
+
+
+class HomeAdminView(AdminMixin, AdminIndexView):
+    pass
+
+class BaseModelView(ModelView):
+    def on_model_change(self, form, model, is_created):
+        model.generate_slug()
+
+admin = Admin(app, 'FlaskApp', url="/", index_view=HomeAdminView('Home'))
+admin.add_view(AdminView(Post, db.session))
+admin.add_view(AdminView(Tag, db.session))
 
 # Настройка логирования
 logging.basicConfig(level=logging.DEBUG)  # Устанавливаем уровень логирования
@@ -36,12 +57,8 @@ logger.addHandler(handler)
 
 # login
 #
-from models import User,Role
+from models import User, Role
+
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
-
-# New decorator: got_first_request
-# @app.got_first_request
-# def got_first_request():
-#     # Actions to perform after the first request has been received
-#     pass
+# register = RegisterForm(app, user_datastore)
