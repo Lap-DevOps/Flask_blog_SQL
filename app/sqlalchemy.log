@@ -17858,3 +17858,488 @@ WHERE post.slug = %(slug_1)s
  LIMIT %(param_1)s
 [cached since 13.5s ago] {'slug_1': 'dadads', 'param_1': 1}
 ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 358.7s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 358.7s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 358.7s ago] {'slug_1': 'dadads', 'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 372.6s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 372.6s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 372.6s ago] {'slug_1': 'dadads', 'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 372.9s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 372.9s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 426.4s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 426.4s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 426.4s ago] {'slug_1': 'dadads', 'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 426.9s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 427.2s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 443.1s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 443.1s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 443.3s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 443.3s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 470.4s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 470.4s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 470.7s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 470.8s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 493.5s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 493.5s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 493.6s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 493.6s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 504.7s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 504.8s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 504.9s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 504.9s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 520.1s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 520.1s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 520.4s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 520.8s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 531.8s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 531.8s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 523.3s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 523.3s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 532s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 532s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 537s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 537s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 537.1s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 537.2s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 538.6s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 538.6s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 530.2s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 530.1s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 538.8s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 538.9s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 540.5s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 540.5s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE lower(user.email) = lower(%(lower_1)s) 
+ LIMIT %(param_1)s
+[generated in 0.00066s] {'lower_1': '1@user.ru', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 560.6s ago] {'param_1': 1}
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 560.8s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 560.8s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 561s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 561s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 564.3s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 564.3s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 555.9s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 555.9s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 564.5s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 564.5s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 568.9s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 568.9s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 569s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 569s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 570.3s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 570.3s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post ORDER BY post.created DESC 
+ LIMIT %(param_1)s, %(param_2)s
+[cached since 562.1s ago] {'param_1': 0, 'param_2': 10}
+SELECT count(*) AS count_1 
+FROM (SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post) AS anon_1
+[cached since 562s ago] {}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 570.7s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 570.7s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 573.5s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 573.5s ago] {'param_1': 1}
+SELECT post.id AS post_id, post.title AS post_title, post.slug AS post_slug, post.body AS post_body, post.created AS post_created 
+FROM post 
+WHERE post.slug = %(slug_1)s 
+ LIMIT %(param_1)s
+[cached since 573.5s ago] {'slug_1': 'qwqw', 'param_1': 1}
+SELECT tag.id AS tag_id, tag.name AS tag_name, tag.slug AS tag_slug 
+FROM tag, post_tags 
+WHERE %(param_1)s = post_tags.post_id AND tag.id = post_tags.tag_id
+[cached since 573.5s ago] {'param_1': 24}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 573.7s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 573.7s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 576s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 576s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 576.2s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 576.2s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 651.1s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 651.1s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 651.2s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 651.2s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 673.4s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 673.4s ago] {'param_1': 1}
+ROLLBACK
+BEGIN (implicit)
+SELECT user.id AS user_id, user.email AS user_email, user.password AS user_password, user.active AS user_active 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+[cached since 673.6s ago] {'id_1': '1', 'param_1': 1}
+SELECT `role`.id AS role_id, `role`.name AS role_name, `role`.description AS role_description 
+FROM `role`, roles_users 
+WHERE %(param_1)s = roles_users.user_id AND `role`.id = roles_users.role_id
+[cached since 673.6s ago] {'param_1': 1}
+ROLLBACK
